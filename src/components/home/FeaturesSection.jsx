@@ -1,29 +1,8 @@
 import { motion } from "framer-motion";
-import { ShoppingBag, ShieldCheck, Star, Truck } from "lucide-react";
 import "../../styles/features.css";
 
-const features = [
-    {
-        icon: <ShoppingBag size={28} />,
-        title: "Quality Craftsmanship",
-        desc: "Hand-picked materials and premium stitching for lasting beauty and durability.",
-    },
-    {
-        icon: <ShieldCheck size={28} />,
-        title: "Secure Shopping",
-        desc: "100% safe and encrypted transactions — shop with complete peace of mind.",
-    },
-    {
-        icon: <Star size={28} />,
-        title: "Best Value",
-        desc: "Lower prices than the market with zero compromise on quality, guaranteed.",
-    },
-    {
-        icon: <Truck size={28} />,
-        title: "Fast Delivery",
-        desc: "Express shipping to your doorstep within 2–5 business days, tracked live.",
-    },
-];
+import { featuresData } from "../../data/featuresData.js";
+import * as Icons from "lucide-react";
 
 const containerVariants = {
     hidden: {},
@@ -58,15 +37,20 @@ export default function FeaturesSection() {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    {features.map((f, idx) => (
-                        <motion.div key={idx} variants={cardVariants}>
-                            <div className="feature-card">
-                                <div className="feature-icon-wrapper">{f.icon}</div>
-                                <h5 className="feature-title">{f.title}</h5>
-                                <p className="feature-desc">{f.desc}</p>
-                            </div>
-                        </motion.div>
-                    ))}
+                    {featuresData.map((f, idx) => {
+                        const IconComponent = Icons[f.icon];
+                        return (
+                            <motion.div key={idx} variants={cardVariants}>
+                                <div className="feature-card">
+                                    <div className="feature-icon-wrapper">
+                                        {IconComponent && <IconComponent size={28} />}
+                                    </div>
+                                    <h5 className="feature-title">{f.title}</h5>
+                                    <p className="feature-desc">{f.desc}</p>
+                                </div>
+                            </motion.div>
+                        );
+                    })}
                 </motion.div>
             </div>
         </section>

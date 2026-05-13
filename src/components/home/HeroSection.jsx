@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
+import heroImg from "../../assets/images/hero-bag.jpg";
 import "../../styles/hero.css";
 
 const fadeLeft = { initial: { opacity: 0, x: -50 }, animate: { opacity: 1, x: 0 }, transition: { duration: 0.8, ease: "easeOut" } };
@@ -93,7 +94,7 @@ export default function HeroSection() {
                     {/* Right Image */}
                     <motion.div {...fadeScale} className="flex-1 hero-image-wrapper">
                         <img
-                            src="https://images.unsplash.com/photo-1547949003-9792a18a2601?w=800&q=80"
+                            src={heroImg}
                             alt="Premium Bags Collection"
                             className="hero-image"
                         />

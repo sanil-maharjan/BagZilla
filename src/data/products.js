@@ -1,10 +1,10 @@
-// ── Local image imports ───────────────────────────────────────────────────────
+// ---- Local image imports ----
 import backpack1 from "../assets/images/backpack-1.jpg";
 import purse1 from "../assets/images/purse-1.jpg";
 import purse2 from "../assets/images/purse-2.jpg";
 import womenRedBag from "../assets/images/women-red-bag.jpg";
 
-// ── Products ──────────────────────────────────────────────────────────────────
+// ---- Products ----
 export const products = [
   {
     id: 1,
@@ -77,7 +77,7 @@ export const products = [
   },
 ];
 
-// ── Recommendations ───────────────────────────────────────────────────────────
+// ---- Recommendations ----
 export const getRecommendations = (currentProductId, limit = 3) => {
   const currentProduct = products.find((p) => p.id === currentProductId);
   if (!currentProduct) return [];

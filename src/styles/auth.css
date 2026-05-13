@@ -1,0 +1,222 @@
+/* SCROLL LOCK — desktop only */
+@media (min-width: 768px) {
+  body.auth-page-active,
+  html.auth-page-active {
+    overflow: hidden !important;
+  }
+}
+
+/* ── PAGE ── */
+.auth-page {
+  min-height: calc(100vh - 64px);
+  width: 100%;
+  background: linear-gradient(135deg, #f0f4ff 0%, #faf5ff 50%, #f0f4ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .auth-page {
+    overflow: hidden;
+  }
+}
+
+/* ── CARD / CONTAINER ── */
+.auth-container {
+  width: 100%;
+  max-width: 920px;
+  height: auto;
+  min-height: 520px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 25px 60px rgba(102, 126, 234, 0.18), 0 8px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .auth-container {
+    flex-direction: row;
+    height: 580px;
+  }
+}
+
+/* ── PANEL + FORM WRAPPER — shared layout ── */
+.auth-panel,
+.auth-form-wrapper {
+  width: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .auth-panel,
+  .auth-form-wrapper {
+    width: 50%;
+  }
+}
+
+/* ── FORM WRAPPER ── */
+.auth-form-wrapper {
+  position: relative;
+  background: #fff;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  min-height: 420px;
+  box-sizing: border-box;
+}
+
+/* ── DESKTOP: re-declare flex so justify-content:center takes effect ── */
+@media (min-width: 768px) {
+  .auth-form-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    min-height: 580px;
+    padding: 44px 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+/* Scrollbar */
+.auth-form-wrapper::-webkit-scrollbar { width: 5px; }
+.auth-form-wrapper::-webkit-scrollbar-track { background: transparent; }
+.auth-form-wrapper::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 4px; }
+.auth-form-wrapper::-webkit-scrollbar-thumb:hover { background: #cbd5e0; }
+
+/* ── SLIDE ANIMATION — signup state ── */
+@media (min-width: 768px) {
+  .auth-container.signup .auth-form-wrapper {
+    transform: translateX(-100%);
+  }
+
+  .auth-container.signup .auth-panel {
+    transform: translateX(100%);
+  }
+}
+
+/* ── ENSURE FORM FILLS THE FLEX CELL ── */
+.auth-form-wrapper > form {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* ── INPUT WRAPPER DIVS ── */
+.auth-form-wrapper .mb-2,
+.auth-form-wrapper .mb-3 {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* ── FORM TYPOGRAPHY ── */
+.auth-form-wrapper h2 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: #1a202c;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .auth-form-wrapper h2 {
+    font-size: 2.1rem;
+  }
+}
+
+.auth-form-wrapper p {
+  color: #718096;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem !important;
+}
+
+@media (min-width: 768px) {
+  .auth-form-wrapper p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ── INPUTS ── */
+.auth-input {
+  width: 100% !important;
+  display: block;
+  height: 48px;
+  border-radius: 10px;
+  font-size: 14px;
+  border: 1.5px solid #e2e8f0;
+  padding: 0 16px;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  background: #f8fafc;
+  color: #2d3748;
+}
+
+.auth-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.12);
+  outline: none;
+  background: #fff;
+}
+
+.auth-input::placeholder {
+  color: #a0aec0;
+  font-size: 13px;
+}
+
+/* ── PRIMARY BUTTON ── */
+.auth-btn {
+  height: 50px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: #fff;
+  transition: opacity 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+  box-shadow: 0 4px 18px rgba(102, 126, 234, 0.45);
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-top: 8px;
+}
+
+.auth-btn:hover {
+  opacity: 0.92;
+  box-shadow: 0 6px 24px rgba(102, 126, 234, 0.55);
+  transform: translateY(-1px);
+}
+
+.auth-btn:active {
+  opacity: 0.85;
+  transform: translateY(0);
+}
+
+/* ── LINK ── */
+.auth-link {
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.25s ease;
+  font-weight: 500;
+}
+
+.auth-link:hover {
+  color: #667eea !important;
+  text-decoration: underline;
+}
