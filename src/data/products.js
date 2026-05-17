@@ -3,6 +3,8 @@ import backpack1 from "../assets/images/backpack-1.jpg";
 import purse1 from "../assets/images/purse-1.jpg";
 import purse2 from "../assets/images/purse-2.jpg";
 import womenRedBag from "../assets/images/women-red-bag.jpg";
+import sleekHandbag from "../assets/images/sleek-handbag.jpg";
+import hikingPro from "../assets/images/hiking-pro-backpack.jpg";
 
 // ---- Products ----
 export const products = [
@@ -59,7 +61,7 @@ export const products = [
     name: "Sleek Handbag",
     category: "Luxury",
     price: 3800,
-    image: "https://images.unsplash.com/photo-1591337676887-a217a6970c8a?w=500&q=80",
+    image: sleekHandbag,
     description: "A timeless design that complements any outfit.",
     features: ["Structured Design", "Gold Hardware", "Premium Lining"],
     tags: ["handbag", "luxury", "party"],
@@ -69,7 +71,7 @@ export const products = [
     name: "Hiking Pro Backpack",
     category: "Backpack",
     price: 4200,
-    image: "https://images.unsplash.com/photo-1552308995-2baac1ad5490?w=500&q=80",
+    image: hikingPro,
     description:
       "Ready for any trail. Durable, comfortable, and packed with features.",
     features: ["Breathable Back", "Multiple Loops", "Reinforced Base"],

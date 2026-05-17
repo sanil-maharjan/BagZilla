@@ -59,14 +59,21 @@ export default function TopPicks() {
                             whileHover={{ y: -8 }}
                             transition={{ type: "spring", stiffness: 300 }}
                         >
-                            <div className="product-card">
-                                <div className="product-image-wrapper">
-                                    <span className="product-category-badge">{item.category}</span>
-                                    <img src={item.image} alt={item.name} />
-                                    <div className="product-overlay">
-                                        <button className="product-add-btn">Add to Cart</button>
+                            <Link to={`/product/${item.id}`} className="block">
+                                <div className="product-card">
+                                    <div className="product-image-wrapper">
+                                        <span className="product-category-badge">{item.category}</span>
+                                        <img src={item.image} alt={item.name} />
+                                        <div className="product-overlay">
+                                            <button 
+                                                className="product-add-btn"
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    // add to cart logic here
+                                                }}
+                                            >Add to Cart</button>
+                                        </div>
                                     </div>
-                                </div>
                                 <div className="product-info">
                                     <p className="product-name">{item.name}</p>
                                     <div className="flex justify-between items-center">
@@ -80,7 +87,8 @@ export default function TopPicks() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                </div>
+                            </Link>
                         </motion.div>
                     ))}
                 </motion.div>
